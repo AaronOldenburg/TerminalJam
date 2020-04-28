@@ -16,7 +16,7 @@ if [[ -z "$myfolder" ]]; then
 	myfolder='../Journal'
 fi
 
-echo "Checking $myfolder for revisions"
+#echo "Checking $myfolder for revisions"
 
 # Location of folder is passed as parameter
 # Run in the background
@@ -27,12 +27,12 @@ do
 	# `sed` removes the result that is just the folder
 	newFile=( $(find $myfolder -mmin -$minInterval | sed 's/^\.\///') )
 	if [[ -z "$newFile" ]]; then
-		printf "No new file found.\n"
+		#printf "No new file found.\n"
 	else 
-		printf "New files are:\n"
+		#printf "New files are:\n"
 		for i in "${newFile[@]}"; do
 			echo $i
-			sh getRandomWord.sh $i
+			sh getRandomWord.sh $i &
 		done
 	fi
 	sleep $checkInterval

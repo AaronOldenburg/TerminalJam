@@ -10,6 +10,6 @@ if [ -z "$myword" ]; then
 	exit
 fi
 
-printf "\n\n getimage.sh has received the word: $myword\n\n"
+#printf "\n\n getimage.sh has received the word: $myword\n\n"
 
 xdg-open "http://duckduckgo.com/${myword}?iax=images&ia=images"

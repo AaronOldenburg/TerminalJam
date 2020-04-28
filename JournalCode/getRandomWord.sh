@@ -7,19 +7,19 @@ IFS=$'\n\t' # changed below...
 # Check to see if a file was specified at command line
 myfile=${1:-}
 if [ -z "$myfile" ]; then
-	printf "No file specified.\n"
+	#printf "No file specified.\n"
 	exit
 elif [ -d "$myfile" ]; then
-	printf "$myfile is a directory.\n"
+	#printf "$myfile is a directory.\n"
 	exit
 fi
 
-echo "Seaching $myfile."
+#echo "Seaching $myfile."
 
 # IFS is Internal Field Separator, decides what separates info into array
 IFS=" "
 
-printf "\nConverting text file to word array...\n\n"
+#printf "\nConverting text file to word array...\n\n"
 
 # Initialize $mywords array
 mywords=()
@@ -37,15 +37,15 @@ while read line; do
 	fi
 done < $myfile
 
-printf "\n\nWords:\n\n"
-for word in "${mywords[@]}"; do
-	printf "A word: $word\n"
-done
-printf "\n\nThat's all the words.\n\n"
+#printf "\n\nWords:\n\n"
+#for word in "${mywords[@]}"; do
+#	printf "A word: $word\n"
+#done
+#printf "\n\nThat's all the words.\n\n"
 
 # Now get random word from $mywords
 
-printf "\n\nChoosing random word.\n\n"
+#printf "\n\nChoosing random word.\n\n"
 
 # Get array length
 len=${#mywords[@]}
@@ -55,6 +55,6 @@ randnum=$(($RANDOM%len))
 
 word=${mywords[randnum]}
 
-printf "\nMy random word: $word\n"
+#printf "\nMy random word: $word\n"
 
-sh getimage.sh ${word}
+sh getimage.sh ${word} &

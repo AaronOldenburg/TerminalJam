@@ -4,6 +4,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+echo "Wait..."
+
 waitInterval=30
 
 sleep $waitInterval

@@ -54,7 +54,7 @@ create_file() {
         
     # adding +num after nano puts the cursor at that line
     # or whatever last line is
-    nano +666 $nameOfFile
+    nano --softwrap +666 $nameOfFile
 }
 
 while true

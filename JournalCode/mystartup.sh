@@ -10,6 +10,6 @@ sleep $waitInterval
 
 echo "Beginning my scripts."
 
-# For now hold off, since can't see the results
+# Add & at the end to run in background
 sh checkfolder.sh &
-sh createNewEntry.sh &
+sh createNewEntry.sh

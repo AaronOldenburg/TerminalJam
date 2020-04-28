@@ -6,22 +6,20 @@ set -euo pipefail
 IFS=$'\n\t'
 
 checkInterval=3600 # seconds
+nameOfFile=""
 
 new_file_name() {
     DATE=`date +%Y-%m-%d`
-    file="../Journal/"$DATE".txt"
-    echo $file
+    nameOfFile="../Journal/"$DATE".txt"
 }
 
 check_file_exists() {
     printf "Looking to see if today's entry already exists.\n\n"
-
     if [[ -f $nameOfFile ]]; then
         printf $nameOfFile" exists already.\n\n"
-        echo true
+        exit
     else
         printf "It doesn't exist. Creating it.\n\n"
-        echo false
     fi
 }
 
@@ -61,10 +59,8 @@ create_file() {
 
 while true
 do
-    nameOfFile=$(new_file_name)
-    if [$(check_file_exists)="true"]; then
-        exit
-    fi
+    new_file_name
+    check_file_exists
     create_file
     sleep $checkInterval
 done

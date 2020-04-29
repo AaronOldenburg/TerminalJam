@@ -1,0 +1,11 @@
+For those of you who feel this isn't enough of a game:
+
+On Wed 29 Apr 2020 03:08:32 PM EDT, 
+
+You lost 20 health.
+You are alive.
+Health now is:
+80On Wed 29 Apr 2020 03:09:38 PM EDT, you lost 20 health.
+You are alive.
+Health now is:
+60

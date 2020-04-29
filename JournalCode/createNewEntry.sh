@@ -10,7 +10,6 @@ nameOfFile=""
 
 new_file_name() {
     DATE=`date +%c`
-    #DATE=`date +%Y-%m-%d`
     nameOfFile="../Journal/"$DATE".txt"
 }
 

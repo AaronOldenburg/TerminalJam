@@ -9,7 +9,8 @@ checkInterval=3600 # seconds
 nameOfFile=""
 
 new_file_name() {
-    DATE=`date +%Y-%m-%d`
+    DATE=`date +%c`
+    #DATE=`date +%Y-%m-%d`
     nameOfFile="../Journal/"$DATE".txt"
 }
 
@@ -32,7 +33,11 @@ get_random_prompt() {
             "What have you dreamed about, or are you dreaming about?"
             "What does the air feel like?"
             "Describe a meal."
-            "Pick a location in your body Describe in detail how it feels.")
+            "Pick a location in your body Describe in detail how it feels."
+            "What do you care about?"
+            "How are you taking care of yourself?"
+            "What sounds do you hear?"
+            )
     len=${#prompts[@]}
     rand=$(($RANDOM%$len))
     prompt=${prompts[rand]}

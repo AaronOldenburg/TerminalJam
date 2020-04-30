@@ -9,12 +9,12 @@ DATE=`date +%c`
 health=100
 MAX_HIT=50
 
-printf "Checking file...\n\n"
+#printf "Checking file...\n\n"
 
 update_file() {
     range_double=$(( MAX_HIT*2 ))
     hit_amt=$(( $((RANDOM%range_double))-MAX_HIT ))
-    printf "\n"$hit_amt"\n"
+    #printf "\n"$hit_amt"\n"
 
     printf "\n\nOn "$DATE", " >> $filename
     
@@ -38,11 +38,11 @@ update_file() {
 }
 
 if [[ -f $filename ]]; then
-    printf "Old file\n"
+    #printf "Old file\n"
     health=$(tail -n 1 $filename)
     update_file
 else
-    printf "New file\n"
+    #printf "New file\n"
     defaultText="Your game stats.\n\n"
     printf $defaultText > $filename
     update_file

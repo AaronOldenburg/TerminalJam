@@ -1,11 +1,18 @@
 For those of you who feel this isn't enough of a game:
 
-On Wed 29 Apr 2020 03:08:32 PM EDT, 
 
-You lost 20 health.
+
+On Thu 30 Apr 2020 06:33:37 AM EDT, your health stayed the same.
 You are alive.
 Health now is:
-80On Wed 29 Apr 2020 03:09:38 PM EDT, you lost 20 health.
+94
+
+On Thu 30 Apr 2020 06:34:20 AM EDT, your health stayed the same.
 You are alive.
 Health now is:
-60
+114
+
+On Thu 30 Apr 2020 06:35:05 AM EDT, you gained 42 health.
+You are alive.
+Health now is:
+156

@@ -14,12 +14,8 @@ new_file_name() {
 }
 
 check_file_exists() {
-    #printf "Looking to see if today's entry already exists.\n\n"
     if [[ -f $nameOfFile ]]; then
-        #printf $nameOfFile" exists already.\n\n"
         exit
-    else
-        #printf "It doesn't exist. Creating it.\n\n"
     fi
 }
 
@@ -64,7 +60,7 @@ create_file() {
 # comment out exit if you want this script to ask for another entry
 # every hour
 
-# exit
+exit
 
 while true
 do

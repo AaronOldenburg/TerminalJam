@@ -9,30 +9,29 @@ sound_clips=()
 mydir=${1:-}
 
 get_array() {
-    mylist=$(ls -1 ../Audio)
-    printf "\n$mylist\nOK...\n"
+    # Makes a string with line breaks after each filename
+	mylist=$(ls $mydir)
+	
+	# Turn the string into an array
+	read sound_clips <<< "$mylist"
     
-    while read line; do
-        read -ra myline <<< "$line"
-        printf "\n$line\n"
-    done < $mylist
-    #sound_clips=$( ls -1 $mydir )
-    #newstring=$mydir
-    #newstring+="/"
-    #newstring+=${sound_clips[0]}
-    #echo $newstring
-    #play $newstring
+    mycliploc=$mydir
+    mycliploc+="/"
+    mycliploc+=${sound_clips[0]}
+    play -q $mycliploc
+    
 }
 
 choose_random_sound() {
-    printf "Choosing..."
+	printf "\nChoosing...\n"
 }
 
 # Check to see if a directory was specified at command line
 if [ -d $mydir ]; then
-    get_array
+	get_array
+	choose_random_sound
 else
-    printf $mydir" is not a directory."
-    exit
+	printf $mydir" is not a directory."
+	exit
 fi
 

@@ -11,5 +11,6 @@ clear
 
 # Add & at the end to run in background
 #sh checkfolder.sh &
+sh playRandomSound.sh ../Audio &
 sh createNewEntry.sh
 #sh dostats.sh

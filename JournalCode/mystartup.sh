@@ -12,4 +12,4 @@ clear
 # Add & at the end to run in background
 #sh checkfolder.sh &
 sh createNewEntry.sh
-sh dostats.sh
+#sh dostats.sh

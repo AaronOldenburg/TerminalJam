@@ -57,19 +57,26 @@ create_file() {
     nano --softwrap +666 $nameOfFile
 }
 
-# comment out exit if you want this script to ask for another entry
-# every hour
-
-exit
-
-while true
-do
+do_steps() {
     new_file_name
     check_file_exists
     create_file
-    sleep $checkInterval
-done
+}
 
+endless_loop() {
+    while true
+    do
+        do_steps
+        sleep $checkInterval
+    done
+}
+
+
+# do one time
+do_steps
+# or comment the above out and uncomment the below for this
+# program to run in the background:
+# endless_loop
 
 
 

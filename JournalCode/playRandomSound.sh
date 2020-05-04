@@ -10,21 +10,22 @@ mydir=${1:-}
 
 get_array() {
     # Makes a string with line breaks after each filename
-	mylist=$(ls $mydir)
+	mylist=$(ls -1 $mydir)
 	
 	# Turn the string into an array
-	read sound_clips <<< "$mylist"
-	printf $sound_clips
+	LFS=' '
+	readarray sound_clips <<<"$mylist"
     
-    mycliploc=$mydir
-    mycliploc+="/"
-    mycliploc+=${sound_clips[0]}
-    #play -q $mycliploc
     
 }
 
 choose_random_sound() {
-	printf "\nChoosing...\n"
+    mycliploc=$mydir
+    mycliploc+="/"
+    len=${#sound_clips[@]}
+    randnum=$(($RANDOM%len))
+    mycliploc+=${sound_clips[randnum]}
+    play -q $mycliploc
 }
 
 # Check to see if a directory was specified at command line

@@ -14,11 +14,12 @@ get_array() {
 	
 	# Turn the string into an array
 	read sound_clips <<< "$mylist"
+	printf $sound_clips
     
     mycliploc=$mydir
     mycliploc+="/"
     mycliploc+=${sound_clips[0]}
-    play -q $mycliploc
+    #play -q $mycliploc
     
 }
 

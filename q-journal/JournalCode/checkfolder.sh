@@ -6,7 +6,7 @@ IFS=$'\n\t'
 
 # Load on start from mystartup.sh
 
-checkInterval=60 # seconds
+checkInterval=300 # seconds
 let minInterval="checkInterval/60"
 newFile=""
 

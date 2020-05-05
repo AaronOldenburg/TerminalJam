@@ -13,9 +13,11 @@ clear
 
 # Checks for new file every ____ seconds (default: 300)
 # Gets random word from new journal entry, searches the web for images
+# Requires 'xdg-open' to be installed
 #sh checkfolder.sh &
 
 # Plays a random sound from Audio folder on start
+# Requires 'sox' to be installed.
 #sh playRandomSound.sh ../Audio &
 
 # Main journal entry script
